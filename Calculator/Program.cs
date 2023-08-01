@@ -1,7 +1,10 @@
-﻿namespace Calculator
+﻿using Calculator.classes;
+
+namespace Calculator
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             bool run = true;
@@ -27,22 +30,40 @@
                     Console.WriteLine();
                     Console.Write("Your chose: ");
                     int chose2=int.Parse(Console.ReadLine());
-
-                    if( chose2 == 1)
+                    Console.WriteLine();
+                    Console.Write("First number: ");
+                    double f_number = double.Parse(Console.ReadLine());
+                    Console.Write("Second  number: ");
+                    double s_number = double.Parse(Console.ReadLine());
+                    calculate c1 = new calculate(f_number, s_number, chose2);
+                    
+                    if ( chose2 == 1)
                     {
-
+                        Console.WriteLine("     Addition");
+                        Console.WriteLine();
+                        c1.Info();
+                        c1.Addition();
                     }
                     if(chose2 == 2)
                     {
-
+                        Console.WriteLine("     Subtraction");
+                        Console.WriteLine();
+                        c1.Info();
+                        c1.Subtraction();
                     }
                     if (chose2 == 3)
                     {
-
+                        Console.WriteLine("     Multiplication");
+                        Console.WriteLine();
+                        c1.Info();
+                        c1.Multiplication();
                     }
                     if (chose2 == 4)
                     {
-
+                        Console.WriteLine("     Divide");
+                        Console.WriteLine();
+                        c1.Info();
+                        c1.Divide();
                     }
                     if(chose2 == 5)
                     {
